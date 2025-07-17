@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Unlit_InfiniteGrid
+  m_Shader: {fileID: 4800000, guid: df965e0c6c6eaf14e922e7b65b2d1970, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _RINGTYPE_SQUARE
+  m_InvalidKeywords:
+  - _ENABLERINGS_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _AnimationSpeed: 0.72
+    - _EnableRings: 1
+    - _FromOrigin: 600
+    - _RingType: 1
+    m_Colors:
+    - _GridColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+    - _RingColor: {r: 1, g: 0.9283323, b: 0.25943398, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
