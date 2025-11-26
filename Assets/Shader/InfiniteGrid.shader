@@ -13,14 +13,11 @@ Shader "Unlit/InfiniteGrid"
     {
         Tags
         {
-            "RenderPipeline"="UniversalRenderPipeline"
+            "RenderPipeline"="UniversalPipeline"
             "RenderType"="Transparent"
             "IgnoreProjector"="True"
             "Queue"="Transparent"
         }
-
-
-
         Pass
         {
             Name "InfiniteGrid"
@@ -35,7 +32,7 @@ Shader "Unlit/InfiniteGrid"
             // Add compiler variants for different ring types
             #pragma shader_feature _RINGTYPE_CIRCLE _RINGTYPE_SQUARE
 
-            #pragma vertex Vert
+            #pragma vertex vert
             #pragma fragment frag
 
             CBUFFER_START(UnityPerMaterial)
@@ -58,7 +55,7 @@ Shader "Unlit/InfiniteGrid"
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
-            Varyings Vert(Attributes input)
+            Varyings vert(Attributes input)
             {
                 Varyings output;
                 UNITY_SETUP_INSTANCE_ID(input);
@@ -216,7 +213,7 @@ Shader "Unlit/InfiniteGrid"
                     rz *= ringEffect;
 
                     // Final color calculation with blending
-                    color = _RingColor / rz;
+                    color = (_RingColor / rz).rgb;
                     color = pow(abs(color), half3(0.99, 0.99, 0.99));
 
                     float maxChannel = max(max(color.r, color.g), color.b);

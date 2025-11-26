@@ -14,7 +14,7 @@ Shader "Unlit/InfiniteHexagonalGrid"
     {
         Tags
         {
-            "RenderPipeline"="UniversalRenderPipeline"
+            "RenderPipeline"="UniversalPipeline"
             "RenderType"="Transparent"
             "IgnoreProjector"="True"
             "Queue"="Transparent"
@@ -22,13 +22,13 @@ Shader "Unlit/InfiniteHexagonalGrid"
 
         Pass
         {
-            Name "InfiniteGrid"
+            Name "InfiniteHexagonalGrid"
             Blend SrcAlpha OneMinusSrcAlpha
             ZWrite Off
             Cull Off
 
             HLSLPROGRAM
-            #pragma vertex Vert
+            #pragma vertex vert
             #pragma fragment frag
 
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
@@ -56,7 +56,7 @@ Shader "Unlit/InfiniteHexagonalGrid"
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
-            Varyings Vert(Attributes input)
+            Varyings vert(Attributes input)
             {
                 Varyings output;
                 UNITY_SETUP_INSTANCE_ID(input);
